@@ -1,0 +1,44 @@
+import java.util.Scanner;
+abstract class Shape
+{
+	double dim1,dim2;
+	Shape(double a,double b)
+	{
+		dim1=a;
+		dim2=b;
+	}
+	abstract doublr area();
+}
+class Rectangle extends Shape
+{
+	Rectangle(double a,double b)
+	{ super(a,b); }
+	double area()
+	{ return dim1*dim2; }
+}
+class Trinagle extends Shape
+{
+	Triangle(double a,double b)
+	{ super(a,b); }
+	double area()
+	{ return 0.5*dim1*dim2; }
+}
+public class Abstract_Ex
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter length and breadth of rectangle");
+		double length=sc.nextDouble();
+		double breadth=sc.nextDouble();
+	`	Shape rect=new Rectangle(length,breadth);
+		System.out.println("area of rectangle"+rect.area());
+		System.out.println("Enter base and height of triangle");
+		double base=sc.nextDouble();
+		double height=sc.nextDouble();
+		Shape tri=new Triangle(base,height);
+		System.out.println("area of triangle:"+tri.area());
+		sc.close();
+	}
+
+}
